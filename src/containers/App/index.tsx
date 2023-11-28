@@ -2,15 +2,17 @@ import { useState } from 'react';
 
 import './App.css';
 import Button from '../../components/Button';
+import { useCountState } from '../../hooks/store/count';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const count = useCountState(state => state.count);
+  const addCount = useCountState(state => state.addCount);
 
   return (
     <>
       <h1>Vite + React + Zustand</h1>
       <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
+        <Button onClick={addCount}>count is {count}</Button>
       </div>
     </>
   );
