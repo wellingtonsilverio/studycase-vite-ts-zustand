@@ -1,8 +1,8 @@
-import { useState } from 'react';
-
-import './App.css';
 import Button from '../../components/Button';
 import { useCountState } from '../../hooks/store/count';
+import Todo from '../Todo';
+
+import './App.css';
 
 function App() {
   const count = useCountState(state => state.count);
@@ -14,6 +14,7 @@ function App() {
       <div className="card">
         <Button onClick={addCount}>count is {count}</Button>
       </div>
+      <Todo />
     </>
   );
 }

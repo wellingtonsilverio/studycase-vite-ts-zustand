@@ -1,0 +1,38 @@
+.Todo {
+  margin-top: 6em;
+}
+
+.Todo .Input {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+.Todo .Input input {
+  flex: 1;
+
+  margin-right: 0.5em;
+  padding: 0 0.5em;
+
+  font-size: 1.2em;
+}
+
+.Todo ul {
+  padding-left: 0;
+}
+
+.Todo ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.2em;
+}
+
+.Todo ul li a {
+  margin: 0.5em;
+
+  color: #fff;
+
+  cursor: pointer;
+}
