@@ -13,5 +13,23 @@ exports[`App should render screen 1`] = `
       0
     </button>
   </div>
+  <div
+    class="Todo"
+  >
+    <h1>
+      Lista de afazeres
+    </h1>
+    <div
+      class="Input"
+    >
+      <input
+        id="title"
+      />
+      <button>
+        Adicionar
+      </button>
+    </div>
+    <ul />
+  </div>
 </div>
 `;

@@ -1,9 +1,9 @@
-import recoilRender from "../../utils/jest/recoilRender"
+import { render } from '@testing-library/react';
 import Todo from './';
 
 describe('Todo Container', () => {
   it('should render Todo', () => {
-    const { container } = recoilRender(<Todo />);
+    const { container } = render(<Todo />);
 
     expect(container).toMatchSnapshot();
   });
