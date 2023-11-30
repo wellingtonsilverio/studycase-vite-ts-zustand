@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface Todo {
   key: number;
@@ -9,8 +10,12 @@ interface TodoState {
   addTodo: (label: string) => void;
   removeTodo: (key: number) => void;
 }
+type SetState = (
+  partial: TodoState | Partial<TodoState> | ((state: TodoState) => TodoState | Partial<TodoState>),
+  replace?: boolean | undefined,
+) => void;
 
-export const useTodoState = create<TodoState>((set) => ({
+const todoState = (set: SetState) => ({
   todos: [],
   addTodo: (label: string) => {
     const todo: Todo = {
@@ -18,9 +23,15 @@ export const useTodoState = create<TodoState>((set) => ({
       label: label,
     };
 
-    set((state) => ({ todos: [...state.todos, todo] }));
+    set((state: TodoState) => ({ todos: [...state.todos, todo] }));
   },
   removeTodo: (key: number) => {
-    set((state) => ({ todos: state.todos.filter((_todo) => _todo.key !== key) }));
+    set((state: TodoState) => ({ todos: state.todos.filter((_todo) => _todo.key !== key) }));
   },
-}));
+});
+
+export const useTodoState = create(
+  persist<TodoState>(todoState, {
+    name: 'studycase::persist::todo',
+  }),
+);
