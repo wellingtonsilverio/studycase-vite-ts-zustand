@@ -17,6 +17,7 @@ function Rick() {
     <div>
       <Button onClick={handleGoToTodo}>Count and Todo exemple with Zustand</Button>
       <h1>Rick</h1>
+      
     </div>
   );
 }

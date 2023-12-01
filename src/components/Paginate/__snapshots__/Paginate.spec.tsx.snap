@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginate Component should render component 1`] = `
+<div>
+  <div>
+    <span>
+      &lt;
+    </span>
+    <input
+      value=""
+    />
+    <span>
+      &gt;
+    </span>
+  </div>
+</div>
+`;
