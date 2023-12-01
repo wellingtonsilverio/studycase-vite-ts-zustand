@@ -3,15 +3,15 @@
 exports[`Paginate Component should render component 1`] = `
 <div>
   <div>
-    <span>
+    <button>
       &lt;
-    </span>
+    </button>
     <input
-      value=""
+      value="1"
     />
-    <span>
+    <button>
       &gt;
-    </span>
+    </button>
   </div>
 </div>
 `;
